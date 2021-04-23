@@ -12,16 +12,25 @@ function Header(props) {
 
 function Main(props) {
   return (
-    <header>
+    <section>
       <p> Main component {props.adjective} </p>
-    </header>
+      <ul style={{textAlign: 'left'}}>
+        {dishes.map((e, id) => <li key={id} > {e} </li>)}
+      </ul>
+    </section>
   );
-}
+} 
+// puting id is not best practices from react perspective, instead convert the dishes into obj
+const dishes = [
+  'vegi',
+  'meat',
+  'fruts'
+];
 
 function Footer(props) {
   return (
     <header>
-      <p> {props.date} </p>
+      <p> Copyright {props.date} </p>
     </header>
   );
 }
@@ -30,7 +39,7 @@ function App() {
   return (
     <div className="App">
       <Header name='Lany' />
-      <Main adjective='amazing' />
+      <Main adjective='amazing' dishes={dishes} />
       <Footer date={new Date().getFullYear()}/>
     </div>
   );
