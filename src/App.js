@@ -34,9 +34,9 @@ const objDishes = dishes.map( (e, i) => ({id:i, dish: e}))
 
 function Footer(props) {
   return (
-    <header>
+    <footer>
       <p> Copyright {props.date} </p>
-    </header>
+    </footer>
   );
 }
 

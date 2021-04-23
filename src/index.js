@@ -4,10 +4,21 @@ import './index.css';
 import App from './App';
 //import reportWebVitals from './reportWebVitals';
 
+/* function AppTwo() {
+  return (
+    <h1> This the second App </h1>
+  );
+} */
+
+
 ReactDOM.render(
   /* <React.StrictMode>
     <App />
-  </React.StrictMode> */ // StrictMode is used to warn when react best practicess are violated
+  </React.StrictMode> */ // You will be warned when your code is in violation of React's best practices and rules.
+  /* <React.Fragment>
+    <App />
+    <AppTwo />
+  </React.Fragment>, */
   <App />,
   document.getElementById('root')
 );
