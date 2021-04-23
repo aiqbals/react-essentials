@@ -1,21 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-//import App from './App';
+import App from './App';
 //import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   /* <React.StrictMode>
     <App />
-  </React.StrictMode> */
-  // React.StrictMode is used to warn when there is violation of react bestpractices
-  React.createElement(
-    'ul', 
-    null, 
-    React.createElement('li', null, 'Monday'),
-    React.createElement('li', null, 'Monday'),
-    React.createElement('li', null, 'Monday')
-  ),
+  </React.StrictMode> */ // StrictMode is used to warn when react best practicess are violated
+  <App />,
   document.getElementById('root')
 );
 
