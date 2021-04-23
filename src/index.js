@@ -10,6 +10,15 @@ import App from './App';
   );
 } */
 
+const checklist = [
+  'boots', 'meets', 'light'
+];
+//console.log(checklist[0]) 
+const [, , light] = [
+  'boots', 'meets', 'light'
+];
+console.log(light); // array destrucruting way
+
 
 ReactDOM.render(
   /* <React.StrictMode>
