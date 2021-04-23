@@ -1,6 +1,14 @@
 import React from 'react';
 import './App.css';
 
+function SecretComponent() {
+  return <h1>For authorized user only</h1>;
+}
+
+function RegularComponent() {
+  return <h1>Everyone can see the component</h1>
+}
+
 function Header(props) {
   //console.log(props);
   return (
@@ -40,14 +48,15 @@ function Footer(props) {
   );
 }
 
-function App() {
-  return (
+function App(props) {
+  /* return (
     <div className="App">
       <Header name='Lany' />
       <Main adjective='amazing' dishes={objDishes} />
       <Footer date={new Date().getFullYear()}/>
     </div>
-  );
+  ); */
+  (props.authorized) ? <SecretComponent /> : <RegularComponent />
 }
 
 export default App;

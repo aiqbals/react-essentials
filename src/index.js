@@ -19,7 +19,7 @@ ReactDOM.render(
     <App />
     <AppTwo />
   </React.Fragment>, */
-  <App />,
+  <App authorized={false} />,
   document.getElementById('root')
 );
 
