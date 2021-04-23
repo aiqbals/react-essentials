@@ -63,7 +63,8 @@ function Footer(props) {
     </>
   ); */
   
-  const [arrItem, setArrVal] = useState('firstVal'); // useState has two argument, undefined (needs to fill with val) and fn.
+  const [arrItem, setArrVal] = useState('firstVal'); 
+  // useState has two argument, undefined (needs to fill with val which is inital state var) and fn is second arg to update the state.
   //console.log(arrItem);
   return ( 
     <>
