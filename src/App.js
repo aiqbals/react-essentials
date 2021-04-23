@@ -48,7 +48,7 @@ function Footer(props) {
   );
 }
 
-function App(props) {
+function App({ authorized }) {
   /* return (
     <div className="App">
       <Header name='Lany' />
@@ -58,9 +58,10 @@ function App(props) {
   ); */
   return ( 
     <>
-      {props.authorized ? <SecretComponent /> : <RegularComponent />} 
+      {authorized ? <SecretComponent /> : <RegularComponent />} 
     </>
   );
 }
 
 export default App;
+//object destructuring and array destrucruing
