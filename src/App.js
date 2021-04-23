@@ -15,7 +15,8 @@ function Main(props) {
     <section>
       <p> Main component {props.adjective} </p>
       <ul style={{textAlign: 'left'}}>
-        {dishes.map((e, id) => <li key={id} > {e} </li>)}
+        {/* {dishes.map((e, id) => <li key={id} > {e} </li>)} */}
+        {props.dishes.map((e) => <li key={e.id} > {e.dish} </li>)}
       </ul>
     </section>
   );
@@ -26,6 +27,9 @@ const dishes = [
   'meat',
   'fruts'
 ];
+const objDishes = dishes.map( (e, i) => ({id:i, dish: e}))
+//console.log(objDishes);
+// when we retrun an obj from fn like this, it needs to be wrapped in parenthesis 
 
 function Footer(props) {
   return (
@@ -39,7 +43,7 @@ function App() {
   return (
     <div className="App">
       <Header name='Lany' />
-      <Main adjective='amazing' dishes={dishes} />
+      <Main adjective='amazing' dishes={objDishes} />
       <Footer date={new Date().getFullYear()}/>
     </div>
   );
