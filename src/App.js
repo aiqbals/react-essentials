@@ -5,23 +5,23 @@ function Header(props) {
   console.log(props);
   return (
     <header>
-      <h1> First component </h1>
+      <h1> {props.name} component </h1>
     </header>
   );
 }
 
-function Main() {
+function Main(props) {
   return (
     <header>
-      <p> Main component </p>
+      <p> Main component {props.adjective} </p>
     </header>
   );
 }
 
-function Footer() {
+function Footer(props) {
   return (
     <header>
-      <p> Footer </p>
+      <p> {props.date} </p>
     </header>
   );
 }
@@ -29,9 +29,9 @@ function Footer() {
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Main />
-      <Footer />
+      <Header name='Lany' />
+      <Main adjective='amazing' />
+      <Footer date={new Date().getFullYear()}/>
     </div>
   );
 }
