@@ -9,7 +9,13 @@ ReactDOM.render(
     <App />
   </React.StrictMode> */
   // React.StrictMode is used to warn when there is violation of react bestpractices
-  React.createElement('h1', {style: {color: 'red'}}, 'Hello world'),
+  React.createElement(
+    'ul', 
+    null, 
+    React.createElement('li', null, 'Monday'),
+    React.createElement('li', null, 'Monday'),
+    React.createElement('li', null, 'Monday')
+  ),
   document.getElementById('root')
 );
 
