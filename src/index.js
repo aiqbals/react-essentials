@@ -10,14 +10,16 @@ import App from './App';
   );
 } */
 
-const checklist = [
+/* const checklist = [
   'boots', 'meets', 'light'
-];
+]; */
 //console.log(checklist[0]) 
-const [, , light] = [
+
+/* const [, , light] = [
   'boots', 'meets', 'light'
 ];
-console.log(light); // array destrucruting way
+console.log(light); */ 
+// array destrucruting way
 
 
 ReactDOM.render(
@@ -28,8 +30,10 @@ ReactDOM.render(
     <App />
     <AppTwo />
   </React.Fragment>, */
+
   <App authorized={false} />,
-  document.getElementById('root')
+  document.getElementById('root') 
+
 );
 
 // If you want to start measuring performance in your app, pass a function

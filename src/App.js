@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 
 function SecretComponent() {
@@ -48,7 +48,8 @@ function Footer(props) {
   );
 }
 
-function App({ authorized }) {
+//function App({ authorized }) { // when obj destructuring
+  function App() { //when array destructuring using useState
   /* return (
     <div className="App">
       <Header name='Lany' />
@@ -56,9 +57,19 @@ function App({ authorized }) {
       <Footer date={new Date().getFullYear()}/>
     </div>
   ); */
-  return ( 
+  /* return ( 
     <>
       {authorized ? <SecretComponent /> : <RegularComponent />} 
+    </>
+  ); */
+  
+  const [arrItem, setArrVal] = useState('firstVal'); // useState has two argument, undefined (needs to fill with val) and fn.
+  //console.log(arrItem);
+  return ( 
+    <>
+      <h1> use useState for destrucruing {arrItem} </h1> 
+      <button onClick={() => setArrVal('changedVal')}> Change </button>
+      <button onClick={() => setArrVal('happy')}> Initial </button>
     </>
   );
 }
