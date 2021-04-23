@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 
 function Header(props) {
-  console.log(props);
+  //console.log(props);
   return (
     <header>
       <h1> {props.name} component </h1>
