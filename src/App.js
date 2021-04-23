@@ -56,7 +56,11 @@ function App(props) {
       <Footer date={new Date().getFullYear()}/>
     </div>
   ); */
-  (props.authorized) ? <SecretComponent /> : <RegularComponent />
+  return ( 
+    <>
+      {props.authorized ? <SecretComponent /> : <RegularComponent />} 
+    </>
+  );
 }
 
 export default App;
