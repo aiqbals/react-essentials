@@ -14,6 +14,7 @@ function Main(props) {
   return (
     <section>
       <p> Main component {props.adjective} </p>
+      <img src='https://cdn5.vectorstock.com/i/1000x1000/25/89/home-button-black-glass-3d-icon-with-metal-frame-vector-22832589.jpg' height={200} alt='imp to use alt' />
       <ul style={{textAlign: 'left'}}>
         {/* {dishes.map((e, id) => <li key={id} > {e} </li>)} */}
         {props.dishes.map((e) => <li key={e.id} > {e.dish} </li>)}
