@@ -108,7 +108,12 @@ function Footer(props) {
         //onChange={() => setChecked((checked) => !checked)} />
         onChange={toggler} />
 
-      <p> {checked ? JSON.stringify(data) : "No user available"} </p>
+      <p> {checked ? JSON.stringify(data) : "No user available, check it to get the data"} </p>
+      <div>
+        <h1> {data.name} </h1>
+        <p> {data.location}</p>
+        <img alt={data.login} src={data.avatar_rul} />
+      </div>
     </>
   );
 }
