@@ -90,6 +90,13 @@ function Footer(props) {
     setChecked((checked) => !checked)
   } */
 
+  // api call in useEffect
+  const[data, setData] = useState(null); //initial state is null when app load
+  useEffect(() => {
+    fetch('https://api.github.com/users/aiqbals')
+    .then(response => response.json())
+    .then(setData)
+  }, []);
 
   return ( 
     <>
@@ -99,7 +106,7 @@ function Footer(props) {
         //onChange={() => setChecked((checked) => !checked)} />
         onChange={toggler} />
 
-      <p> {checked ? "chekcked" : "unchecked"} </p>
+      <p> {checked ? JSON.stringify(data) : "No user available"} </p>
     </>
   );
 }
