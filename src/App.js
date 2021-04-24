@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect, useReducer} from 'react';
 import './App.css';
 
 function SecretComponent() {
@@ -63,14 +63,43 @@ function Footer(props) {
     </>
   ); */
   
-  const [arrItem, setArrVal] = useState('firstVal'); 
+  //const [arrItem, setArrVal] = useState('firstVal'); 
   // useState has two argument, undefined (needs to fill with val which is inital state var) and fn is second arg to update the state.
   //console.log(arrItem);
-  return ( 
+
+  /* useEffect(() => {
+    console.log('It's ${emotion} around here!');
+  },  [emotion]); */
+  //cause sideeffect, means to load data using api. It takes two arg, second one called dependecy arr
+  // correctly shows the useEffect Hook used with the dependency array argument to track values
+  
+  /* return ( 
     <>
       <h1> use useState for destrucruing {arrItem} </h1> 
       <button onClick={() => setArrVal('changedVal')}> Change </button>
       <button onClick={() => setArrVal('happy')}> Initial </button>
+    </>
+  ); */
+  
+  //const [checked, setChecked] = useState(false);
+  const [checked, toggler] = useReducer(
+    (checked) => !checked,
+    false);
+  //another way using useReducer - takes two arg, fn to update the state, and initial state
+  /* function toggler(){
+    setChecked((checked) => !checked)
+  } */
+
+
+  return ( 
+    <>
+      <input 
+        type="checkbox" 
+        value={checked} 
+        //onChange={() => setChecked((checked) => !checked)} />
+        onChange={toggler} />
+
+      <p> {checked ? "chekcked" : "unchecked"} </p>
     </>
   );
 }
