@@ -93,6 +93,8 @@ function Footer(props) {
   // api call in useEffect
   const[data, setData] = useState(null); //initial state is null when app load
   useEffect(() => {
+    //fetch('https://api.github.com/users/${login}')
+    // use to get dynmaic user, and use login as props to get the username from App's parrents
     fetch('https://api.github.com/users/aiqbals')
     .then(response => response.json())
     .then(setData)
