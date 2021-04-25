@@ -1,5 +1,7 @@
 import React, {useState, useEffect, useReducer} from 'react';
 import './App.css';
+import { Routes, Route } from 'react-router-dom';
+import { Home, About, Events, Contact, Whoops404, Services, CompanyHistory, Location } from './pages';
 
 function SecretComponent() {
   return <h1>For authorized user only</h1>;
@@ -110,6 +112,18 @@ function Footer(props) {
 
   return ( 
     <>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/about' element={<About />} >
+          <Route path='/services' element={<Services />} />
+          <Route path='/companyhistory' element={<CompanyHistory />} />
+          <Route path='/location' element={<Location />} />
+        </ Route>
+        <Route path='/events' element={<Events />} />
+        <Route path='/contact' element={<Contact />} />
+        <Route path='/*' element={<Whoops404 />} /> 
+      </Routes>
+
       <input 
         type="checkbox" 
         value={checked} 
@@ -130,3 +144,4 @@ function Footer(props) {
 
 export default App;
 //object destructuring and array destrucruing
+// other way of writting React.Fragment is <> </>  to avoid puting extra div since components should have one rootcomponent 

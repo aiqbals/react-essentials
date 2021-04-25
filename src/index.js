@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 //import reportWebVitals from './reportWebVitals';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 /* function AppTwo() {
   return (
@@ -30,10 +31,10 @@ ReactDOM.render(
     <App />
     <AppTwo />
   </React.Fragment>, */
-
-  <App authorized={false} />,
+  <Router>
+    <App authorized={false} />
+  </Router>,
   document.getElementById('root') 
-
 );
 
 // If you want to start measuring performance in your app, pass a function
