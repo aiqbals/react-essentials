@@ -7,8 +7,12 @@ function Checkbox() {
     );
     return (
         <>
-            <label> {checked ? 'checked' : 'not checked'} </label>
+            <label htmlFor='checkbox'> 
+                {checked ? 'checked' : 'not checked'} 
+            </label>
+
             <input 
+                id='checkbox'
                 type='checkbox'
                 value={checked}
                 onChange={toggle} />
