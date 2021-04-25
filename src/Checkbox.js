@@ -8,7 +8,10 @@ function Checkbox() {
     return (
         <>
             <label> {checked ? 'checked' : 'not checked'} </label>
-            <input type='checkbox' />
+            <input 
+                type='checkbox'
+                value={checked}
+                onChange={toggle} />
         </>
     )
 }
