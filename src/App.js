@@ -99,15 +99,15 @@ function Footer(props) {
     //setLoading(true);
     //fetch('https://api.github.com/users/${login}')
     // use to get dynmaic user, and use login as props to get the username from App's parrents
-    fetch('https://api.github.com/users/aiqbal')
+    fetch('https://api.github.com/users/')
     .then(response => response.json())
     .then(setData)
     .then(() => setLoading(false))
-    .catch(setError(() => error))
+    .catch(setError);
   }, []); //[login], login in the dependency array to call it when the login value changes
 
   if(loading) return <h1> Loading...</h1>
-  
+
   return ( 
     <>
       <input 
