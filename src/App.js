@@ -92,14 +92,22 @@ function Footer(props) {
 
   // api call in useEffect
   const[data, setData] = useState(null); //initial state is null when app load
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
   useEffect(() => {
+    //if(!login) return; // jump out to useEffect call if no loging
+    //setLoading(true);
     //fetch('https://api.github.com/users/${login}')
     // use to get dynmaic user, and use login as props to get the username from App's parrents
-    fetch('https://api.github.com/users/aiqbals')
+    fetch('https://api.github.com/users/aiqbal')
     .then(response => response.json())
     .then(setData)
-  }, []);
+    .then(() => setLoading(false))
+    .catch(setError(() => error))
+  }, []); //[login], login in the dependency array to call it when the login value changes
 
+  if(loading) return <h1> Loading...</h1>
+  
   return ( 
     <>
       <input 
